@@ -1,17 +1,82 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>Epoch - Time Tracking Tool</title>
-    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <meta charset="utf-8">
+    <title>Epok - Time Tracking Tool</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
+    <meta name="author" content="Adam Akers">
+    <meta name="description" content="Track your tasks with ease">
+
+    <script src="https://use.fontawesome.com/2692d542cb.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
-    <aside></aside>
+    <div class="main-container">
+      <header class="main-header">
+        <h1 class="header-name">Epok</h1>
+      </header>
+      
+      <section class="left">
+        <div class="timer-box box">
+          <h1 class="timer">00:00:00</h1>
+          <input class="task-input" type="text" placeholder="Task" maxlength="25"></input>
+          <div class="buttons-container">
+            <div class="buttons-top">
+              <button class="start btn-disabled" disabled><i class="fa fa-hourglass-start" aria-hidden="true"></i> Start</button>
+              <button class="stop hide"><i class="fa fa-stop-circle" aria-hidden="true"></i> Stop</button>
+            </div>
+            <div class="buttons-bottom">
+              <button class="log btn-disabled" disabled><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Log Event</button>
+              <!--<button class="new-task" disabled><i class="fa fa-plus" aria-hidden="true"></i> New Task</button>-->
+            </div>
+          </div>
+        </div><!--/.timer-box-->
+      </section>
+
+      <section class="right">
+        <div class="tasks-box box">
+          <ul class="task-container">
+
+            <!--<li class="task-item task-0">
+              <div class="timer-object">
+                <h3 class="task-desc">Task</h3>
+                <h4 class="task-time">Time</h4>
+                <h4 class="task-edit">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><i class="fa fa-refresh" aria-hidden="true"></i></li>
+                    <li class="menu-item"><i class="fa fa-times" aria-hidden="true"></i></li>
+                  </ul>
+              </div>
+            </li>
+            <li class="task-item task-0">
+              <div class="timer-object">
+                <h3 class="task-desc">Task</h3>
+                <h4 class="task-time">Time</h4>
+                <h4 class="task-edit">
+                  <ul class="sub-menu">
+                    <li class="menu-item"><i class="fa fa-refresh" aria-hidden="true"></i></li>
+                    <li class="menu-item"><i class="fa fa-times" aria-hidden="true"></i></li>
+                  </ul>
+              </div>
+            </li>-->
 
 
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+    </div><!--/.main-container-->
+
+    <script src="scripts/scripts.js"></script>
   </body>
 
 

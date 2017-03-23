@@ -1,0 +1,364 @@
+/* ############
+    Universal
+   ############ */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* ############
+    BASIC ELEMENTS
+   ############ */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Varela Round', sans-serif;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration:none;
+}
+
+
+/* ############
+    MAIN-CONTAINER
+   ############ */
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  background: url("../assets/img/escheresque-dark.png");
+  background-color: #353531;
+}
+
+
+/* ############
+    HEADER
+   ############ */
+
+.main-header {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.header-name {
+  font-size: 4rem;
+  color: white;
+}
+
+/* ############
+    LEFT
+   ############ */
+
+.left,
+.right {
+  text-align: center;
+  padding: 1rem 3rem;
+  margin: 0;
+}
+
+.left {
+  width: 100%;
+}
+
+.timer-box {
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.timer {
+  color: white;
+  font-size: 4.2rem;
+  margin-bottom: 2rem;
+}
+
+.task-input {
+  height: 5rem;
+  padding: 0 1rem;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  width: 80%;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
+
+.buttons-top {
+  margin-bottom: 2rem;
+}
+
+
+.start-contain {
+  background-color: red;
+  padding: 5px;
+  display: inline-block;
+}
+
+
+.start,
+.stop,
+.log,
+.new-task {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0, 0.4);
+  cursor: pointer;
+  padding: 10px 15px;
+  margin: 0 5px;
+  font-size: 2rem;
+  font-family: 'Varela Round', sans-serif;
+  color: white;
+}
+
+.task-input,
+.start,
+.stop,
+.log,
+.new-task {
+  outline: none;
+}
+
+.start {
+  background-color: #2AFC98;
+}
+
+.stop {
+  background-color: #DB162F;
+}
+
+.log {
+  background-color: #FFB238;
+}
+
+.new-task {
+  background-color: #016FB9;
+}
+
+.start:focus,
+.start:hover {
+  background-color: rgba(42, 252, 152, 0.7);
+}
+
+.stop:focus,
+.stop:hover {
+  background-color: rgba(219, 22, 47, 0.7);
+}
+
+.log:focus,
+.log:hover {
+  background-color: rgba(255, 178, 56, 0.7);
+}
+
+.new-task:focus,
+.new-task:hover {
+  background-color: rgba(1,111,185, 0.7);
+}
+
+
+/* ############
+    RIGHT
+   ############ */
+
+.right {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  border-top: 3px solid white;
+}
+
+.tasks-box {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.tasks-box::-webkit-scrollbar {
+  width: 1rem;
+}
+
+.tasks-box::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+.tasks-box::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 10px;
+}
+
+.task-container {
+  height: 90%;
+}
+
+.task-item {
+  background-color: #016FB9;
+}
+
+.edit-menu {
+  padding-top: 1.4rem;
+  display: none;
+}
+
+.menu-item {
+  display: inline-block;
+  margin: 0 2rem;
+  padding: 5px;
+}
+
+.menu-item .fa {
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.timer-object {
+  margin: 1.5rem 0;
+  border-radius: 4px;
+  padding: 1rem;
+  position: relative;
+}
+
+.timer-object:first-child {
+  margin-top: 0;
+}
+
+.task-desc,
+.task-time,
+.task-edit {
+  font-size: 2rem;
+  color: white;
+}
+
+.task-desc,
+.task-time {
+  margin: 1.5rem 0;
+  padding: 1px;
+}
+
+.task-edit {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.sub-menu li .fa {
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.sub-menu .fa-times {
+  background-color: #FF101F;
+}
+
+.sub-menu .fa-refresh {
+  background-color: #6CC551;
+}
+
+.timer-object:hover .task-edit {
+  display: inline-block;
+}
+
+
+/* ############
+    REUSABLE CLASSES
+   ############ */
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.btn-disabled {
+  background-color: #A3A3A3;
+}
+
+.btn-disabled:focus,
+.btn-disabled:hover,
+.btn-disabled:active {
+  background-color: #A3A3A3;
+}
+
+
+
+/* ############
+  MEDIA QUERIES
+############ */
+
+@media(min-width: 455px) {
+
+/* ############
+  RIGHT
+############ */
+  .task-desc,
+  .task-time {
+    margin: 1rem 0;
+    font-size: 2rem;
+  }
+
+
+}
+
+@media(min-width: 600px) {
+
+/* ############
+  LEFT
+############ */  
+
+  .timer {
+    font-size: 6rem;
+  }
+
+
+/* ############
+  RIGHT
+############ */  
+  
+  .task-desc,
+  .task-time {
+    margin: 1rem 0;
+    font-size: 2.6rem;
+  }
+}
+
+@media(min-width: 850px) {
+
+  /* ############
+  LEFT
+############ */  
+
+  .timer {
+    font-size: 8rem;
+  }
+
+/* ############
+  RIGHT
+############ */
+  .task-item {
+    max-width: 790px;
+    margin: 0 auto;
+  }
+}
